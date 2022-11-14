@@ -1,0 +1,45 @@
+.containe{
+    background-color: #031b3e !important;
+    height: 100vh;
+    width: 93vw;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow-y: hidden;
+}
+img{
+    height: 220px;
+    width: 75%;
+    margin-top: 25%;
+    border-radius: 10px;
+}
+p{
+    font-size: 28px;
+    color: rgb(172, 171, 171);
+}
+h3{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+button{
+    width: 77%;
+    font-size: 24px;
+    height: 60px;
+    border-radius: 40px;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+@media screen and (min-width: 600px) {
+    .containe{
+        width: 100vw;
+    }
+    img{
+        width: 20%;
+        margin-top: 5%;
+    }
+    button{
+        width: 15%;
+        margin-left: 10px;
+    }
+}
