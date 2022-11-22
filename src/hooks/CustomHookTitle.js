@@ -6,7 +6,7 @@ import useCounter from './useCounter'
 function CustomHookTitle() {
 
    //Managing states with custom hooks
-    const [count, increment] = useCounter(0, 10)
+    const [count, increment] = useCounter(5, 10)
 
     //Changing username with custom hooks
     // const [username, setUsername] = useState("")

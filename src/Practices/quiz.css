@@ -1,13 +1,12 @@
 .containe{
     background-color: #031b3e !important;
-    height: 100vh;
-    width: 93vw;
-    padding-left: 30px;
-    padding-right: 30px;
+    height: 95vh;
+    padding-left: 26px;
+    padding-right: 26px;
     overflow-y: hidden;
 }
 img{
-    height: 220px;
+    height: 200px;
     width: 75%;
     margin-top: 25%;
     border-radius: 10px;
@@ -16,23 +15,39 @@ p{
     font-size: 28px;
     color: rgb(172, 171, 171);
 }
-h3{
+h4{
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: cursive;
+    font-size: 18px;
     line-height: 30px;
-    letter-spacing: 1px;
 }
 button{
-    width: 77%;
-    font-size: 24px;
-    height: 60px;
+    background-color: rgb(210, 206, 206);
+    width: 73%;
+    font-size: 22px;
+    height: 51px;
     border-radius: 40px;
-    margin-top: 20px;
+    border: thin solid white;
+    margin-top: 18px;
     font-family: 'Times New Roman', Times, serif;
+}
+.active{text-align: center;}
+.nonactive{display: none;}
+.reset{
+    background-color: black;
+    border: thin solid white;
+    padding: 5px;
+    width: 22%;
+    height: 38px;
+    border-radius: 4px;
+    margin-top: 40px;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 @media screen and (min-width: 600px) {
     .containe{
-        width: 100vw;
+        height: 100vh;
     }
     img{
         width: 20%;

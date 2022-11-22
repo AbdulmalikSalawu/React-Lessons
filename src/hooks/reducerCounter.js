@@ -19,7 +19,7 @@ const reducer = (state, action) => {
 function ReducerCounter() {
     const [count, dispatch] = useReducer(reducer, initialState)
 
-//  useReducer accepts two values, the function, and the initial state
+//  useReducer accepts two values, the reducer function, and the initial state
 //  useReducer returns a pair of value which we can get hold of using the array destructuring syntax
 //  in the above, count is the current state
 //  dispatch is used to execute the appropriate actions, based on the button the user clicks

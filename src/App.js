@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Routes, Route} from 'react-router-dom'
 // import ContextProvider from './components/ContextProvider';
 // import { UserProvider } from './components/userContext';
 
@@ -9,9 +10,17 @@ import './App.css';
 // import User from './components/User';
 // import UseRefFocus from './hooks/UseRefFocus';
 // import UseRefTimer from './hooks/UseRefTimer';
-import CustomHookTitle from './hooks/CustomHookTitle';
-import TempControl from './Practices/TempControl';
+// import CustomHookTitle from './hooks/CustomHookTitle';
+// import TempControl from './Practices/TempControl';
 import QuizApp from './Practices/QuizApp';
+import Home from './RoutesPages/Home';
+import About from './RoutesPages/About';
+import Navbar from './RoutesPages/Navbar';
+import OrderSummary from './RoutesPages/OrderSummary';
+import NoMatch from './RoutesPages/NoMatch';
+import Products from './RoutesPages/Products';
+import FeaturedProducts from './RoutesPages/FeaturedProducts';
+import NewProducts from './RoutesPages/NewProducts';
 // import RenderProps from './components/RenderProps';
 // import DataFetching from './hooks/DataFetching';
 // import ReducerCounter from './hooks/reducerCounter';
@@ -46,7 +55,19 @@ import QuizApp from './Practices/QuizApp';
 function App() {
   return (
     <div className="App">
-      <QuizApp />
+      <Navbar />
+      <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='about' element={<About />}></Route>
+          <Route path='order-summary' element={<OrderSummary />} />
+          <Route path='products' element={<Products />}>
+              <Route path='featured' element={<FeaturedProducts />} />
+              <Route path='new' element={<NewProducts />} />
+          </Route>
+          <Route path='*' element={<NoMatch />} />
+      </Routes>
+
+      {/* <QuizApp /> */}
       {/* <TempControl /> */}
       {/* <UserProvider value='Malik'>
         <ContextProvider />
