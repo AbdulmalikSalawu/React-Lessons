@@ -21,6 +21,14 @@ import NoMatch from './RoutesPages/NoMatch';
 import Products from './RoutesPages/Products';
 import FeaturedProducts from './RoutesPages/FeaturedProducts';
 import NewProducts from './RoutesPages/NewProducts';
+import Users from './RoutesPages/Users';
+import Details from './RoutesPages/Details';
+import Admin from './RoutesPages/Admin';
+import Profile from './RoutesPages/Profile';
+import { AuthProvider } from './RoutesPages/auth';
+import Login from './RoutesPages/Login';
+import RequireAuth from './RoutesPages/RequireAuth';
+import NavTutorial from './Practices/NavTutorial';
 // import RenderProps from './components/RenderProps';
 // import DataFetching from './hooks/DataFetching';
 // import ReducerCounter from './hooks/reducerCounter';
@@ -55,23 +63,34 @@ import NewProducts from './RoutesPages/NewProducts';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <NavTutorial /> */}
+      <AuthProvider>
+      {/* <Navbar /> */}
+      <NavTutorial />
       <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='about' element={<About />}></Route>
           <Route path='order-summary' element={<OrderSummary />} />
           <Route path='products' element={<Products />}>
+              <Route index element={<FeaturedProducts />} />
               <Route path='featured' element={<FeaturedProducts />} />
               <Route path='new' element={<NewProducts />} />
           </Route>
+          <Route path='users' element={<Users />}>
+              <Route path=':userId' element={<Details />} />
+              <Route path='admin' element={<Admin />} />
+          </Route>
+          <Route path='profile' element={<RequireAuth><Profile /></RequireAuth>} />
+          <Route path='login' element={<Login />} />
           <Route path='*' element={<NoMatch />} />
       </Routes>
+      </AuthProvider>
 
       {/* <QuizApp /> */}
       {/* <TempControl /> */}
       {/* <UserProvider value='Malik'>
         <ContextProvider />
-      </UserProvider> */}
+      </UserProvider> */} 
       {/* <CustomHookTitle /> */}
       {/* <UseRefTimer /> */}
       {/* <UseRefFocus /> */}
